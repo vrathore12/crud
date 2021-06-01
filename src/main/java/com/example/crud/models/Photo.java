@@ -1,5 +1,7 @@
 package com.example.crud.models;
 
+import com.example.crud.validations.ValidName;
+
 import java.util.Date;
 
 public class Photo {
@@ -7,6 +9,7 @@ public class Photo {
     private String id;
     private String albumId;
     private String photoUrl;
+    @ValidName
     private String createdBy;
     private Date dateCreated;
 

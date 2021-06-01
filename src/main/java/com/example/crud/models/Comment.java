@@ -1,12 +1,17 @@
 package com.example.crud.models;
 
+import com.example.crud.validations.ValidName;
+import org.hibernate.validator.constraints.Length;
+
 import java.util.Date;
 
 public class Comment {
 
     private String id;
     private String photoId;
+    @Length(min = 5)
     private String message;
+    @ValidName
     private String createdBy;
     private Date dateCreated;
 

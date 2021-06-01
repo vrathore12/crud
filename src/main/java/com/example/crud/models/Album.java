@@ -1,13 +1,18 @@
 package com.example.crud.models;
 
+import com.example.crud.validations.ValidName;
+import org.hibernate.validator.constraints.Length;
+
 import java.util.Date;
 
 
 public class Album {
 
     private String id;
+    @Length(max = 10)
     private String name;
     private String coverPhotoUrl;
+    @ValidName
     private String createdBy;
     private Date dateCreated;
 

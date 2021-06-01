@@ -36,5 +36,9 @@ public class UserService {
     public void deleteUSer(String userId) {
         userRepository.deleteById(userId);
     }
+
+    public List<User> getUserByName(String name) {
+        return userRepository.findAllByName(name);
+    }
 }
 
