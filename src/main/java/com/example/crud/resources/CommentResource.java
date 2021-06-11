@@ -4,6 +4,8 @@ import com.example.crud.models.Comment;
 import com.example.crud.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -14,7 +16,7 @@ public class CommentResource {
     private CommentService commentService;
 
     @PostMapping
-    public Comment postComment(@RequestBody Comment comment){
+    public Comment postComment(@Valid @RequestBody Comment comment){
         return commentService.postComment(comment);
     }
 

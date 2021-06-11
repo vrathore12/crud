@@ -5,6 +5,7 @@ import com.example.crud.services.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 @RestController
 @RequestMapping("/api/photos")
@@ -14,7 +15,7 @@ public class PhotoResource {
     private PhotoService photoservice;
 
     @PostMapping
-    public Photo addPhoto(@RequestBody Photo photo){
+    public Photo addPhoto(@Valid @RequestBody Photo photo){
         return photoservice.addPhoto(photo);
     }
 
