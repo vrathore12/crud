@@ -18,7 +18,7 @@ public class AlbumResource {
     private AlbumService albumService;
 
     @PostMapping
-    public Album postAlbum(@RequestBody Album album){
+    public Album postAlbum(@Valid @RequestBody Album album){
         return albumService.postAlbum(album);
     }
 
@@ -28,7 +28,7 @@ public class AlbumResource {
     }
 
     @GetMapping("/find")
-    public List<Album> getById(@Valid @RequestParam(name="id") String albumId){
+    public List<Album> getById(@RequestParam(name="id") String albumId){
         return albumService.getById(albumId);
     }
 
